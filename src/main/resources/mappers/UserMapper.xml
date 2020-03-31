@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.vue_admin.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.example.vue_admin.model.entity.User">
+    <!--@mbg.generated-->
+    <!--@Table user-->
+    <id column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="introduction" jdbcType="VARCHAR" property="introduction" />
+    <result column="avatar" jdbcType="VARCHAR" property="avatar" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+  </resultMap>
+
+    <select id="userLoginByUsernameAndPassword" resultMap="BaseResultMap">
+      select `uid`,`introduction`,`avatar`,`name` from user where username=#{username} and password=#{password}
+    </select>
+  <select id="getUserRoleByUid" resultType="java.lang.String">
+    select rname from uar join user on uar_uid=uid join role on uar_rid=rid where uid=#{uid}
+  </select>
+</mapper>
