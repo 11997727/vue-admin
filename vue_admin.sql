@@ -3,7 +3,7 @@ Navicat MySQL Data Transfer
 
 Source Server         : 阿里云docker
 Source Server Version : 50729
-Source Host           : 123.57.128.164:3307
+Source Host           : 
 Source Database       : vue_admin
 
 Target Server Type    : MYSQL
